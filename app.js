@@ -20,6 +20,13 @@ function prev(){
     render(step);
 }
 
+function btnRender(stage){
+    if(stage == 0) document.getElementById("prev").disabled = true;
+    else document.getElementById("prev").disabled = false;
+    if(stage == 4) document.getElementById("next").disabled = true;
+    else document.getElementById("next").disabled = false;
+}
+
 function initial(){
     for(let i=0; i<4; i++){
         document.getElementById(`point${i+1}`).innerText = `${i+1}`;
@@ -29,8 +36,8 @@ function initial(){
             document.getElementById(`line${i+1}`).style.background = `gray`;
         }
     }
-
     document.getElementById("point1").style.background = `blue`;
+    btnRender(0);
 }
 
 function render(stage){
@@ -48,6 +55,7 @@ function render(stage){
     }
     //status
     document.getElementById("status").innerHTML = `<p>${status[stage]}<p>`;
+    btnRender(stage);
 }
 
-render(step);
+initial();
