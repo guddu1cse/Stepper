@@ -23,14 +23,11 @@ function prev(){
 function btnRender(stage){
     if(stage == 0) document.getElementById("prev").disabled = true;
     else document.getElementById("prev").disabled = false;
-    if(stage == 4) {
-        document.getElementById("next").disabled = true;
-        document.getElementById("next").innerText = "Finish";
-    }
-    else {
-        document.getElementById("next").disabled = false;
-        document.getElementById("next").innerText = "Next";
-    }
+    if(stage == 4) document.getElementById("next").disabled = true;
+    else document.getElementById("next").disabled = false;
+    
+    if(stage == 3 || stage==4) document.getElementById("next").innerText = "Finish";
+    else document.getElementById("next").innerText = "Next";
 }
 
 function initial(){
@@ -46,6 +43,7 @@ function initial(){
     document.getElementById("status").innerHTML = `<p>${status[0]}<p>`;
     btnRender(0);
 }
+initial();
 
 function render(stage){
     for(let i=0 ; i<stage ; i++){
@@ -64,5 +62,3 @@ function render(stage){
     document.getElementById("status").innerHTML = `<p>${status[stage]}<p>`;
     btnRender(stage);
 }
-
-initial();
