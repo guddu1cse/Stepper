@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strpper</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h2>Stepper</h2>
+    </header>
+    <main class="main">
+        <div class="stepper">
+            <div class="point point1" id="point1">1</div>
+            <div class="line line1" id="line1"></div>
+            <div class="point point2" id="point2">2</div>
+            <div class="line line1" id="line2"></div>
+            <div class="point point3" id="point3">3</div>
+            <div class="line line1" id="line3"></div>
+            <div class="point point4" id="point4">4</div>
+        </div>
+        <div class="stages">
+            <div class="item">Contact Details</div>
+            <div class="item">Shiping Address</div>
+            <div class="item">Payment</div>
+            <div class="item">Delivered</div>
+        </div>
+        <div class="status" id="status"> 
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="prev" onclick="prev()">Previous</button>
+            <button class="btn" id="next" onclick="next()">Next</button>
+        </div>
+    </main>
+</body>
+</html>
