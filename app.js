@@ -23,8 +23,14 @@ function prev(){
 function btnRender(stage){
     if(stage == 0) document.getElementById("prev").disabled = true;
     else document.getElementById("prev").disabled = false;
-    if(stage == 4) document.getElementById("next").disabled = true;
-    else document.getElementById("next").disabled = false;
+    if(stage == 4) {
+        document.getElementById("next").disabled = true;
+        document.getElementById("next").innerText = "Finish";
+    }
+    else {
+        document.getElementById("next").disabled = false;
+        document.getElementById("next").innerText = "Next";
+    }
 }
 
 function initial(){
@@ -37,6 +43,7 @@ function initial(){
         }
     }
     document.getElementById("point1").style.background = `blue`;
+    document.getElementById("status").innerHTML = `<p>${status[0]}<p>`;
     btnRender(0);
 }
 
